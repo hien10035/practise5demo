@@ -1,24 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Parent from './component/parent/Parent';
+import Child from './component/child/Child';
 
+
+
+
+const CommandTexts = [
+  {name:'Add', style: {backgroundColor: 'violet', fontSize: '16px', color: 'white'}},
+  {name:'Update', style: {backgroundColor: 'grey', fontSize: '16px', color: 'blue'}},
+  {name:'Delete', style: {backgroundColor: 'red', fontSize: '16px', color: '#fff'}},
+  {name:'Filter', style: {backgroundColor: 'purple', fontSize: '16px', color: 'green'}}
+];
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Parent><Child names={CommandTexts}/></Parent>
     </div>
   );
 }
